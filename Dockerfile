@@ -9,6 +9,6 @@ RUN pip3 install -r requirements.txt
 
 RUN pip3 install -r test-requirements.txt
 
-WORKDIR /workspace/parking_system
+WORKDIR /workspace/AppApi
 
 ENTRYPOINT ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]

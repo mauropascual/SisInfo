@@ -11,8 +11,7 @@ from services.departamento import DepartamentoService
 departamento_router = APIRouter(prefix='/departamento')
 
 @departamento_router.get("/", response_model=list[DepartamentoBase], tags=["Departamento"])
-def register_user(session: Session=Depends(get_db_session),
-                  _: Administrator=Depends(get_current_user)):
+def get_departamento(session: Session=Depends(get_db_session)):
     departamento_service = DepartamentoService(session)
 
     return departamento_service.get_departamento()
