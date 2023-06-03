@@ -4,7 +4,7 @@ import uvicorn
 from fastapi import Depends, FastAPI
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api import user, administrator, auth, departamento, conserje
+from api import user, administrator, auth, departamento, conserje, copropietario
 from api.dependencies import get_current_user
 from data.models import Administrator, Conserje
 from schemas.administrator import Administrator as SCAdmin
@@ -23,6 +23,7 @@ app.include_router(administrator.administrator_router)
 app.include_router(auth.auth_router)
 app.include_router(departamento.departamento_router)
 app.include_router(conserje.conserje_router)
+app.include_router(copropietario.copropietario_router)
 
 @app.get("/")
 async def root():

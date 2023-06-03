@@ -6,3 +6,4 @@ from .role import Role
 from .role_permission import RolePermission
 from .user_permission import UserPermission
 from .departamento import Departamento
+from .copropietario import Copropietario
