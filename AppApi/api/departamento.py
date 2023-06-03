@@ -17,7 +17,7 @@ def get_departamento(session: Session=Depends(get_db_session)):
     return departamento_service.get_departamento()
 
 @departamento_router.post("/", response_model=DepartamentoBase, tags=["Departamento"])
-def register_user(departamento: DepartamentoBase, session: Session=Depends(get_db_session),
+def register_departamento(departamento: DepartamentoBase, session: Session=Depends(get_db_session),
                   user: Administrator=Depends(get_current_user)):
     departamento_service = DepartamentoService(session)
 
