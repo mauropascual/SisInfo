@@ -9,8 +9,8 @@ class Conserje(User):
     cargo = Column(String(20), nullable=False)
     carnet= Column(String(10), nullable=False)
     antecedentes = Column(String(50), nullable=False)
-    direccion = Column(String(60), nullable=True)#new
-    telefono = Column(String(20), nullable=True)#new
+    direccion = Column(String(60), nullable=True)
+    telefono = Column(String(20), nullable=True)
 
     foto = Column(LargeBinary((2**32)-1))
     
