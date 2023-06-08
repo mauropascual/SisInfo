@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Boolean,ForeignKey
+from sqlalchemy import Column, String, Boolean, LargeBinary, ForeignKey
 from sqlalchemy.orm import relationship
 from data import Base
 
@@ -12,6 +12,7 @@ class Departamento(Base):
     numero_depar= Column(String(10), nullable=False)
     garaje = Column(Boolean, nullable=False, default=False)
     boulera = Column(Boolean, nullable=False, default=False)
+    foto = Column(LargeBinary((2**32)-1))
     id_administrator = Column(String(4), ForeignKey('administrator.id_user'))
 
     administrator = relationship("Administrator", back_populates="departamentos")

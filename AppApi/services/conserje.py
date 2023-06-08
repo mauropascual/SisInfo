@@ -53,6 +53,11 @@ class ConserjeService:
 
         return conserje
 
+    def delete_conserje(self, id_conserje:str):
+        query = self.session.query(Conserje).filter(Conserje.id_user==id_conserje).delete()
+        self.session.commit()
+
+        return query
 
     # def update_conserje(self, id_conserje:str, foto, user:UpdateConserje, get_conserje):
     #     self.session.query(Conserje).filter(Conserje.id_user==id_conserje).update(

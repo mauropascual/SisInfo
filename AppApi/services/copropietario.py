@@ -12,6 +12,10 @@ class CopropietarioService:
     def __init__(self, session : Session):
         self.session = session
 
+    def get_copropietarios(self):
+        db_query = self.session.query(Copropietario).all()
+        return db_query
+
     def register_copropietario(self, foto, user: Copro):
         id_user = generate_id()
         hashed_password = get_hashed_password(user.password)

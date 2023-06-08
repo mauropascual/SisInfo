@@ -37,3 +37,10 @@ def update_conserje(id, foto:UploadFile=File(default=None), user: UpdateConserje
         foto = foto.file.read()
 
     return conserje_service.update_conserje(id, foto, user)
+
+@conserje_router.delete("/{id}", tags=["Conserje"])
+def delete_conserje(id:str, session:Session=Depends(get_db_session)):
+    conserje_service = ConserjeService(session)
+    conserje_service.delete_conserje(id)
+
+    return {"Mensaje": "Fue eliminado exitosamente"}
